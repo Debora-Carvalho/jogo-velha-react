@@ -11,9 +11,12 @@ function App() {
     }
 
     render() {
+      const { value, onClick } = this.props;
+      const className = value ? `square ${value.toLowerCase()}` : 'square';
+      
       return (
-        <button className='square' onClick={() => this.props.onClick()}>
-          {this.props.value}
+        <button className={className} onClick={onClick}>
+          {value}
         </button>
       );
     }
